@@ -31,7 +31,7 @@ export function LeadForm({
             src="https://api.leadconnectorhq.com/widget/form/napa-pickleball-lead"
             style={{ width: "100%", height: "100%", border: "none" }}
             scrolling="no"
-            title={`Napa Pickleball Concierge lead form for ${sourcePage}`}
+            title={`Napa Concierge lead form for ${sourcePage}`}
             loading="lazy"
           />
         </div>

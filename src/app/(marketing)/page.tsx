@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { JsonLd } from "@/components/site/json-ld";
-import { LeadForm } from "@/components/site/lead-form";
+import { ConciergeForm } from "@/components/site/concierge-form";
 import { ServiceCard } from "@/components/site/service-card";
 import { TrustBar } from "@/components/site/trust-bar";
 import { Button } from "@/components/ui/button";
@@ -25,7 +25,7 @@ export default function HomePage() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    name: "Napa Pickleball Concierge",
+    name: "Napa Concierge",
     email: "jeff@nvproperties.net",
     url: siteUrl,
     description:
@@ -76,13 +76,7 @@ export default function HomePage() {
               </div>
             </div>
             <div className="fade-up rounded-[1.75rem] bg-[#faf7f2] p-4 text-foreground">
-              <LeadForm
-                eyebrow="Start with one quick note"
-                title="Tell us what kind of Napa weekend you want."
-                description="No obligation. Jeff replies within 24 hours with the right next move."
-                sourcePage="/"
-                minHeight={420}
-              />
+              <ConciergeForm service="general-inquiry" />
             </div>
           </div>
           <TrustBar className="border-t border-white/10 px-6 py-5 text-primary-foreground md:px-14" />
@@ -97,7 +91,7 @@ export default function HomePage() {
               Napa feels better when one local expert handles the moving pieces.
             </h2>
             <p className="text-lg leading-8 text-muted-foreground">
-              Napa Pickleball Concierge was built for visitors who want the valley’s best without
+              Napa Concierge was built for visitors who want the valley’s best without
               spending hours comparing hotels, reservation apps, transportation, and activity vendors.
             </p>
             <p className="text-lg leading-8 text-muted-foreground">

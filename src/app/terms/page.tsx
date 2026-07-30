@@ -3,7 +3,7 @@ import { buildMetadata } from "@/lib/metadata";
 export const metadata = buildMetadata({
   title: "Terms of Service",
   description:
-    "Terms of service for Napa Pickleball Concierge covering inquiry handling, service coordination, and third-party experience providers.",
+    "Terms of service for Napa Concierge covering inquiry handling, service coordination, and third-party experience providers.",
   path: "/terms",
 });
 
@@ -19,7 +19,7 @@ export default function TermsPage() {
         </div>
         <div className="prose-copy space-y-6">
           <p>
-            Napa Pickleball Concierge provides planning support, local recommendations, and booking coordination
+            Napa Concierge provides planning support, local recommendations, and booking coordination
             for Napa Valley experiences. Submitting an inquiry does not guarantee a reservation until availability
             is confirmed and any required third-party booking steps are completed.
           </p>
@@ -29,7 +29,7 @@ export default function TermsPage() {
             service delivery remain subject to each provider’s terms.
           </p>
           <p>
-            Napa Pickleball Concierge aims to respond to new inquiries within 24 hours. Response timing may
+            Napa Concierge aims to respond to new inquiries within 24 hours. Response timing may
             vary on holidays, peak travel weekends, or when a request requires confirmation from multiple vendors.
           </p>
           <p>

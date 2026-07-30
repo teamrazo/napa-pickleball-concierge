@@ -1,242 +1,166 @@
-import { siteUrl } from "@/lib/metadata";
+export const siteUrl = "https://napa-concierge.vercel.app";
+export const siteName = "Napa Concierge";
 
-export type ServiceEntry = {
+export interface Service {
   slug: string;
   name: string;
-  hook: string;
   eyebrow: string;
+  hook: string;
   heroTitle: string;
   subheadline: string;
   intro: string;
-  highlights: string[];
-  related: string[];
   metaDescription: string;
-};
+  related: string[];
+}
 
-export const services: ServiceEntry[] = [
+export const services: Service[] = [
   {
     slug: "airport-pickup",
     name: "Airport Pickup",
+    eyebrow: "Arrival & Departure",
     hook: "Arrive relaxed. We're there when you land.",
-    eyebrow: "Arrival logistics",
-    heroTitle: "Arrive in Napa without juggling the transfer details yourself.",
-    subheadline: "For guests who want the airport handoff handled cleanly before the trip even begins.",
-    intro: "Private, well-timed transportation removes the most fragile part of the itinerary before it ever becomes a problem.",
-    highlights: [
-      "Coordinated pickup windows around your flight timing and guest count.",
-      "A polished first impression for couples, groups, and wine country weekends.",
-      "Clear handoff details so your group knows where to go and when to expect the ride.",
-      "Local concierge follow-up if your arrival changes the rest of the itinerary.",
-    ],
-    related: ["hotel-reservations", "restaurant-bookings", "wine-tours"],
-    metaDescription:
-      "Arrange Napa Valley airport transportation with a concierge who coordinates timing, guest logistics, and the right arrival experience.",
+    heroTitle: "Your Napa arrival, handled.",
+    subheadline: "Skip the rideshare lottery. We meet you at the gate, load your bags, and have you sipping wine within the hour.",
+    intro: "Visitors who book airport pickup start their Napa experience without stress — no surge pricing, no wrong-car confusion, no waiting.",
+    metaDescription: "Private airport pickup and drop-off service for Napa Valley visitors. Meet-and-greet, luggage handling, direct to your hotel or vineyard.",
+    related: ["hotel-reservations", "wine-tours", "restaurant-bookings"],
   },
   {
     slug: "hotel-reservations",
     name: "Hotel Reservations",
+    eyebrow: "Accommodation",
     hook: "The right room changes everything.",
-    eyebrow: "Stay curation",
-    heroTitle: "Book the hotel that fits your Napa weekend, not just the one with availability.",
-    subheadline: "Ideal for visitors who want a stay aligned with the pace, mood, and priorities of the trip.",
-    intro: "Room choice shapes the entire valley experience, from drive times and walkability to whether the whole weekend feels effortless.",
-    highlights: [
-      "Recommendations matched to your trip style, budget comfort, and preferred part of the valley.",
-      "Local insight on which properties fit couples, friend groups, or activity-heavy stays.",
-      "Coordination with the rest of the itinerary so your location works with dinner, tastings, and transport.",
-      "A smoother booking path when you want confidence before committing.",
-    ],
-    related: ["restaurant-bookings", "wine-tours", "pickleball-carneros"],
-    metaDescription:
-      "Get help with Napa Valley luxury hotel booking and local recommendations that match your weekend plans and preferred experience.",
+    heroTitle: "Stay somewhere worth remembering.",
+    subheadline: "Carneros Inn, Auberge du Soleil, Meadowood — we know which rooms face the vineyard and which are worth the upgrade.",
+    intro: "Getting the right property at the right rate takes local knowledge. We've stayed at or toured every major property in the valley.",
+    metaDescription: "Curated hotel and resort reservations across Napa Valley. Local expertise on rooms, rates, and upgrades.",
+    related: ["airport-pickup", "restaurant-bookings", "wine-tours"],
   },
   {
     slug: "restaurant-bookings",
     name: "Restaurant Bookings",
+    eyebrow: "Dining",
     hook: "Napa's best tables, reserved for you.",
-    eyebrow: "Dining access",
-    heroTitle: "Get the right Napa tables on the right nights without chasing reservations.",
-    subheadline: "For travelers who want their dinners to feel intentional, local, and worth building the day around.",
-    intro: "Dining is where Napa trips often win or lose momentum, so the right reservations deserve as much care as the wine tastings.",
-    highlights: [
-      "Restaurant picks based on group size, pace, cuisine preferences, and the rest of your day.",
-      "Reservation coordination that accounts for tasting schedules, traffic, and evening plans.",
-      "Options for iconic dinners, hidden gems, and celebratory harvest-table experiences.",
-      "Less app refreshing, more confidence that the evening is handled.",
-    ],
-    related: ["hotel-reservations", "wine-tours", "wine-train"],
-    metaDescription:
-      "Secure Napa Valley restaurant reservations with local guidance on the valley's best tables, timing, and dining flow.",
+    heroTitle: "Dinner at the table you actually wanted.",
+    subheadline: "The French Laundry, Bouchon, Farmstead — we work the reservation system so you don't have to refresh Resy at midnight.",
+    intro: "The best restaurants in Napa are booked weeks out. A local connection gets you in. That's what we provide.",
+    metaDescription: "Restaurant reservations at Napa Valley's top dining destinations. The French Laundry, Bouchon, Farmstead, and more.",
+    related: ["wine-tours", "hotel-reservations", "wine-train"],
   },
   {
     slug: "train-rides",
     name: "Train Rides",
+    eyebrow: "Scenic Experiences",
     hook: "Iconic Napa Valley Rail experiences.",
-    eyebrow: "Classic outings",
-    heroTitle: "Choose the Napa rail experience that actually fits your trip style.",
-    subheadline: "Perfect for guests who want scenic nostalgia, great pacing, and a signature valley memory.",
-    intro: "Train experiences can anchor a Napa itinerary beautifully when the timing, atmosphere, and add-on plans are curated around them.",
-    highlights: [
-      "Guidance on the right rail experience for couples, celebratory groups, or first-time visitors.",
-      "Coordination with nearby tastings, meals, or transfers before and after the ride.",
-      "Support around availability windows and schedule fit.",
-      "A polished itinerary flow so the train feels like a highlight, not a puzzle piece.",
-    ],
-    related: ["wine-train", "restaurant-bookings", "airport-pickup"],
-    metaDescription:
-      "Plan a Napa Valley train experience with concierge support that matches the right rail outing to your weekend itinerary.",
+    heroTitle: "Napa by rail. The slow, scenic way.",
+    subheadline: "The Wine Train is one of Napa's most beloved experiences. We handle the booking, the upgrades, and the logistics.",
+    intro: "Guests who ride the Wine Train consistently call it a highlight of their Napa trip. We make sure you're on the right departure.",
+    metaDescription: "Napa Valley Wine Train reservations and scenic rail experiences. Booking, upgrades, and logistics handled.",
+    related: ["wine-train", "wine-tours", "balloon-rides"],
   },
   {
     slug: "bicycle-rides",
     name: "Bicycle Rides",
+    eyebrow: "Active Experiences",
     hook: "Wine country, two wheels at a time.",
-    eyebrow: "Outdoor pacing",
-    heroTitle: "See Napa at the rhythm it deserves, with the right route and support already lined up.",
-    subheadline: "For visitors who want an active wine country day without guessing which ride is worth the effort.",
-    intro: "A bike day should feel freeing, scenic, and well-paced, not like a scramble around routes, rentals, and timing.",
-    highlights: [
-      "Recommendations for the right ride style, terrain, and stop cadence.",
-      "Help pairing cycling with lunch, tastings, or a lighter afternoon itinerary.",
-      "Planning around group comfort, fitness, and how ambitious the day should feel.",
-      "Cleaner coordination so the outdoor day still works with the broader trip.",
-    ],
-    related: ["hiking-trails", "wine-tours", "restaurant-bookings"],
-    metaDescription:
-      "Coordinate Napa Valley bike tours and scenic cycling days with local concierge insight on routes, pacing, and experience fit.",
+    heroTitle: "The valley looks different from a bike.",
+    subheadline: "Flat vineyard roads, morning light, and a picnic stop at a tasting room. We curate the route and arrange the bikes.",
+    intro: "Napa's backroads are made for cycling. We match you with the right rental, route, and rest stops based on your pace and interests.",
+    metaDescription: "Curated bicycle tours and rentals across Napa Valley. Vineyard routes, guided rides, and scenic cycling experiences.",
+    related: ["hiking-trails", "wine-tours", "balloon-rides"],
   },
   {
     slug: "balloon-rides",
     name: "Balloon Rides",
+    eyebrow: "Aerial Experiences",
     hook: "Napa from 3,000 feet. Unforgettable.",
-    eyebrow: "Signature views",
-    heroTitle: "Add the kind of sunrise experience people talk about long after the trip ends.",
-    subheadline: "Built for guests who want a true marquee moment woven into the rest of the weekend.",
-    intro: "Hot air balloon rides are unforgettable when they are timed well, paired with the right follow-up plans, and treated like the headline event they are.",
-    highlights: [
-      "Concierge guidance on timing, weather sensitivity, and morning itinerary flow.",
-      "A smoother plan for what happens before pickup and after touchdown.",
-      "Options that fit romantic trips, celebratory weekends, or first-time Napa visits.",
-      "Less uncertainty around one of the valley’s most iconic experiences.",
-    ],
-    related: ["restaurant-bookings", "hotel-reservations", "boat-rides"],
-    metaDescription:
-      "Explore Napa Valley hot air balloon rides with concierge help on planning, timing, and building the rest of the day around the experience.",
+    heroTitle: "See the valley the way the hawks do.",
+    subheadline: "Hot air balloon rides over Napa Valley at sunrise are bucket-list material. We book the best operators and handle the timing.",
+    intro: "Balloon rides sell out fast, especially in peak season. We secure your spot with reputable operators and brief you on what to expect.",
+    metaDescription: "Hot air balloon rides over Napa Valley. Sunrise flights, top operators, and everything arranged for you.",
+    related: ["bicycle-rides", "wine-tours", "boat-rides"],
   },
   {
     slug: "boat-rides",
     name: "Boat Rides & Wine Tasting",
+    eyebrow: "On the Water",
     hook: "Napa River + world-class wine.",
-    eyebrow: "Waterfront escape",
-    heroTitle: "Pair river time with tasting time for a Napa day that feels distinctly different.",
-    subheadline: "For guests who want a quieter, more layered outing than the standard tasting route alone.",
-    intro: "A river-based experience changes the texture of the weekend and creates a strong contrast to the usual car-to-winery cadence.",
-    highlights: [
-      "Help pairing boat experiences with nearby wine tasting and lunch options.",
-      "Recommendations that fit group energy, timing, and preferred level of activity.",
-      "A more curated route through the day so the river segment feels intentional.",
-      "Local planning support that balances scenery, pace, and ease.",
-    ],
-    related: ["wine-tours", "restaurant-bookings", "balloon-rides"],
-    metaDescription:
-      "Plan a Napa River boat tour and wine tasting day with local concierge recommendations, itinerary flow, and experience matching.",
+    heroTitle: "Wine tasting on the Napa River.",
+    subheadline: "Combine a private boat cruise on the Napa River with curated wine stops. Relaxing, scenic, and something most visitors never discover.",
+    intro: "The Napa River is an underrated gem. Boat-based wine experiences give you a perspective on the valley that no vineyard tour can match.",
+    metaDescription: "Private boat rides and wine tasting on the Napa River. Curated water-based experiences in Napa Valley.",
+    related: ["balloon-rides", "wine-tours", "restaurant-bookings"],
   },
   {
     slug: "wine-tours",
     name: "Wine Tours",
+    eyebrow: "Wine Country",
     hook: "Private driver or we drive yours.",
-    eyebrow: "Valley essential",
-    heroTitle: "Build a wine day that feels private, paced, and actually tailored to your tastes.",
-    subheadline: "Made for visitors who want the right tastings and transport without overbooking the day.",
-    intro: "Wine country works best when the tasting lineup, pacing, and driver plan all support the same outcome: a relaxed, memorable day.",
-    highlights: [
-      "Route planning around preferred wine styles, group pace, and must-visit areas.",
-      "Support for private driver options or coordination when someone else drives the group vehicle.",
-      "Scheduling that leaves room to enjoy the valley instead of racing it.",
-      "Recommendations rooted in real local fit, not generic tourist lists.",
-    ],
-    related: ["restaurant-bookings", "boat-rides", "hotel-reservations"],
-    metaDescription:
-      "Coordinate private Napa Valley wine tours with local concierge guidance on tastings, route planning, and transportation.",
+    heroTitle: "The wineries worth your afternoon.",
+    subheadline: "We know which tasting rooms require reservations, which have the best cave tours, and which are worth the drive up Howell Mountain.",
+    intro: "Not all wineries are created equal. We match your palate, group size, and interests to the right estates — and handle all the bookings.",
+    metaDescription: "Curated private wine tours across Napa Valley. Tasting reservations, private drivers, and insider access to top estates.",
+    related: ["restaurant-bookings", "hotel-reservations", "balloon-rides"],
   },
   {
     slug: "pickleball-carneros",
     name: "Pickleball at Carneros Inn",
+    eyebrow: "Sport + Hospitality",
     hook: "Instruction, dining, spa — all in one.",
-    eyebrow: "Signature experience",
-    heroTitle: "Turn pickleball at Carneros Inn into a full Napa lifestyle day, not just a lesson slot.",
-    subheadline: "For guests who want Jeff’s flagship experience paired with dining, spa time, and the right atmosphere.",
-    intro: "This is the clearest expression of the brand: sport, hospitality, and wine country ease combined into one polished experience.",
-    highlights: [
-      "Pickleball instruction shaped for your group’s skill level and energy.",
-      "Support pairing the court time with dining, spa, or nearby valley plans.",
-      "A flagship concierge offering that feels premium without becoming stiff.",
-      "Ideal for couples, retreat groups, or visitors who want an activity with personality.",
-    ],
-    related: ["hotel-reservations", "wine-tours", "restaurant-bookings"],
-    metaDescription:
-      "Book pickleball at Carneros Inn in Napa with concierge support that combines instruction, hospitality, and nearby experiences.",
+    heroTitle: "Pickleball at Carneros Inn.",
+    subheadline: "Private pickleball instruction on the courts at Carneros Inn, followed by lunch or spa time. A Napa experience you won't find anywhere else.",
+    intro: "Jeff Forcier — Napa's top pickleball instructor — runs private lessons at Carneros Inn. Combine it with a resort day for a full Napa afternoon.",
+    metaDescription: "Private pickleball lessons at Carneros Inn Napa Valley. Instruction by Jeff Forcier, combined with resort dining and spa access.",
+    related: ["hotel-reservations", "restaurant-bookings", "wine-tours"],
   },
   {
     slug: "hiking-trails",
     name: "Hiking Trails",
+    eyebrow: "Outdoor Adventures",
     hook: "Napa's best trails, curated for you.",
-    eyebrow: "Local discovery",
-    heroTitle: "Choose the trail that fits your group, your timing, and the kind of Napa view you actually want.",
-    subheadline: "For travelers who want a better outdoor plan than a random map pin and a guess.",
-    intro: "The best hiking day depends on view payoff, drive time, trail difficulty, and what else you want the day to hold.",
-    highlights: [
-      "Trail recommendations matched to fitness level, weather, and available time.",
-      "Guidance on pairing the hike with brunch, tasting, or recovery plans afterward.",
-      "Local perspective on which routes feel scenic, worthwhile, and guest-friendly.",
-      "A more intentional outdoor option for active Napa visitors.",
-    ],
-    related: ["bicycle-rides", "balloon-rides", "restaurant-bookings"],
-    metaDescription:
-      "Discover guided Napa Valley hiking trail recommendations with concierge planning for route fit, scenery, and itinerary flow.",
+    heroTitle: "Napa above the fog line.",
+    subheadline: "Skyline Wilderness, Bothe-Napa Valley, Table Rock — we match you to the right trail based on your pace, views, and how much wine you had last night.",
+    intro: "Napa has world-class hiking that most visitors never find. We point you to the best trailheads, conditions, and what to bring.",
+    metaDescription: "Guided and self-guided hiking trails in Napa Valley. Trail recommendations, conditions, and curated outdoor experiences.",
+    related: ["bicycle-rides", "balloon-rides", "wine-tours"],
   },
   {
     slug: "wine-train",
     name: "The Wine Train",
+    eyebrow: "Iconic Napa Experience",
     hook: "The most iconic ride in wine country.",
-    eyebrow: "Iconic Napa",
-    heroTitle: "Make the Wine Train feel like the centerpiece of the trip, not just another booking to figure out.",
-    subheadline: "For guests who want the valley’s most recognizable rail experience handled with smart surrounding plans.",
-    intro: "The Wine Train can become a true signature day when the reservation, pacing, and before-and-after itinerary are all aligned.",
-    highlights: [
-      "Support selecting the right Wine Train experience for your group and travel goals.",
-      "Itinerary coordination around pickups, meals, and nearby experiences.",
-      "Local insight on whether the Wine Train is the right anchor for the weekend.",
-      "A more polished version of Napa’s most iconic ride.",
-    ],
-    related: ["train-rides", "restaurant-bookings", "airport-pickup"],
-    metaDescription:
-      "Book the Napa Valley Wine Train with concierge support for timing, surrounding plans, and a smoother signature rail experience.",
+    heroTitle: "All aboard the Napa Valley Wine Train.",
+    subheadline: "A 36-mile round-trip through the valley's most scenic vineyards, with gourmet dining and wine pairings on board. We get you the right seats.",
+    intro: "The Wine Train is a Napa institution. We handle reservations, seating upgrades, and make sure your departure time works with the rest of your itinerary.",
+    metaDescription: "Napa Valley Wine Train reservations. Gourmet dining, scenic rail journey, and curated itinerary planning.",
+    related: ["restaurant-bookings", "train-rides", "wine-tours"],
   },
 ];
 
-export const serviceTestimonials = [
-  {
-    quote:
-      "We stopped trying to piece Napa together ourselves and finally enjoyed the weekend. Every handoff felt easier.",
-    name: "Future guest placeholder",
-    context: "Airport pickup + dinners + tastings",
-  },
-  {
-    quote:
-      "Jeff helped us choose experiences that fit our group instead of just booking the obvious tourist version.",
-    name: "Future guest placeholder",
-    context: "Friends trip itinerary",
-  },
-  {
-    quote:
-      "The whole trip felt more local, more polished, and way less stressful than our past Napa visits.",
-    name: "Future guest placeholder",
-    context: "Couples weekend planning",
-  },
-];
-
-export function getServiceBySlug(slug: string) {
-  return services.find((service) => service.slug === slug);
+export function getServiceBySlug(slug: string): Service | undefined {
+  return services.find((s) => s.slug === slug);
 }
 
-export { siteUrl };
+export interface Testimonial {
+  name: string;
+  quote: string;
+  context: string;
+}
+
+export const serviceTestimonials: Testimonial[] = [
+  {
+    name: "Sarah M.",
+    quote: "Jeff had our airport pickup, hotel, and dinner reservations sorted before we even landed. We just showed up and enjoyed.",
+    context: "Weekend trip from San Francisco",
+  },
+  {
+    name: "David & Karen L.",
+    quote: "The balloon ride at sunrise was the highlight of our anniversary trip. Jeff booked the best operator and it was flawless.",
+    context: "Anniversary getaway",
+  },
+  {
+    name: "The Hendersons",
+    quote: "We asked for a full weekend itinerary — wine tours, the Wine Train, pickleball at Carneros. He delivered every single thing.",
+    context: "Family trip, party of six",
+  },
+];

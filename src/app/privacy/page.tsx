@@ -3,7 +3,7 @@ import { buildMetadata } from "@/lib/metadata";
 export const metadata = buildMetadata({
   title: "Privacy Policy",
   description:
-    "Privacy policy for Napa Pickleball Concierge, including contact form handling, hosted GHL forms, and analytics consent expectations.",
+    "Privacy policy for Napa Concierge, including contact form handling, hosted GHL forms, and analytics consent expectations.",
   path: "/privacy",
 });
 
@@ -19,7 +19,7 @@ export default function PrivacyPage() {
         </div>
         <div className="prose-copy space-y-6">
           <p>
-            Napa Pickleball Concierge collects the information you submit through hosted forms so Jeff
+            Napa Concierge collects the information you submit through hosted forms so Jeff
             can respond to your inquiry, coordinate requested services, and follow up about your Napa Valley plans.
           </p>
           <p>

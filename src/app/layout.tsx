@@ -21,12 +21,12 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Napa Valley Concierge | Napa Pickleball Concierge",
+    default: "Napa Valley Concierge | Napa Concierge",
     template: "%s | Napa Valley Concierge",
   },
   description:
     "Curated Napa Valley concierge planning for wine tours, restaurants, airport pickup, pickleball, and signature local experiences.",
-  applicationName: "Napa Pickleball Concierge",
+  applicationName: "Napa Concierge",
   keywords: [
     "Napa Valley concierge",
     "Napa wine tours",

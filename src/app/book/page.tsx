@@ -1,94 +1,57 @@
-import Link from "next/link";
-import { JsonLd } from "@/components/site/json-ld";
-import { LeadForm } from "@/components/site/lead-form";
-import { TrustBar } from "@/components/site/trust-bar";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
 import { buildMetadata } from "@/lib/metadata";
+import { ConciergeForm } from "@/components/site/concierge-form";
 
 export const metadata = buildMetadata({
   title: "Book a Concierge Call",
-  description:
-    "Book a concierge planning call for a tailored Napa Valley itinerary covering reservations, wine country experiences, and local logistics.",
+  description: "Tell us what you need and we'll handle the rest. One call. Your entire Napa Valley experience planned.",
   path: "/book",
-  imagePath: "/book/opengraph-image",
 });
 
 export default function BookPage() {
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "ContactPage",
-    name: "Book a Concierge Call",
-    description: "Primary lead capture page for Napa Pickleball Concierge.",
-  };
-
   return (
-    <main id="main-content" className="section-shell py-8 md:py-12">
-      <JsonLd data={jsonLd} />
-      <div className="mb-6">
-        <Link href="/" className="font-display text-2xl font-semibold tracking-[0.02em] text-primary">
-          Napa Pickleball Concierge
-        </Link>
-      </div>
-      <section className="hero-panel overflow-hidden rounded-[2rem] text-primary-foreground soft-ring">
-        <div className="grid gap-8 px-6 py-10 md:px-10 md:py-14 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
-          <div className="space-y-6">
-            <span className="inline-flex rounded-full border border-white/18 bg-white/10 px-4 py-2 text-xs uppercase tracking-[0.3em]">
-              Book a Concierge Call
-            </span>
-            <div className="space-y-4">
-              <h1 className="font-display text-5xl font-semibold text-balance md:text-6xl">
-                Start with one inquiry and let Jeff shape the right Napa itinerary.
+    <main id="main-content">
+      <section
+        className="relative min-h-[100dvh] flex items-center bg-gradient-to-br from-[#6B2737] to-[#2C2C2C]"
+        style={{
+          backgroundImage: "radial-gradient(circle at 75% 20%, rgba(201,168,76,0.2), transparent 40%), var(--tw-gradient-stops)",
+        }}
+      >
+        <div
+          className="pointer-events-none absolute inset-0 opacity-[0.04]"
+          style={{ backgroundImage: "radial-gradient(circle, #fff 1px, transparent 1px)", backgroundSize: "24px 24px" }}
+        />
+        <div className="relative z-10 mx-auto max-w-5xl w-full px-4 sm:px-6 lg:px-8 py-20">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="text-white space-y-6">
+              <p className="text-xs uppercase tracking-widest text-[#C9A84C]">Napa Concierge</p>
+              <h1 className="font-display text-4xl sm:text-5xl font-semibold leading-tight">
+                Your Napa Valley,<br />Handled.
               </h1>
-              <p className="max-w-2xl text-lg leading-8 text-primary-foreground/80">
-                Share your dates, group details, and what kind of weekend you want. This page exists
-                for one thing only: turning your Napa ideas into a plan.
+              <p className="text-lg text-white/75 leading-relaxed">
+                Tell us what you have in mind — airport pickup, dinner reservations, a wine tour, or all of the above. We&apos;ll take it from there.
               </p>
+              <ul className="space-y-3 text-sm text-white/70">
+                {[
+                  "Response within 24 hours",
+                  "Locally curated, personally arranged",
+                  "11 services across Napa Valley",
+                  "No booking fees",
+                ].map((item) => (
+                  <li key={item} className="flex items-center gap-2">
+                    <span className="h-1.5 w-1.5 rounded-full bg-[#C9A84C] shrink-0" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
             </div>
-            <TrustBar className="rounded-[1.5rem] border border-white/[0.12] bg-white/[0.08] p-5 text-primary-foreground" />
-            <Card className="border-white/[0.12] bg-white/[0.08] text-primary-foreground">
-              <CardContent className="space-y-4 p-6">
-                <h2 className="font-display text-3xl">What happens next</h2>
-                <ul className="space-y-3 text-primary-foreground/82">
-                  <li>1. Jeff reviews your request and any must-have experiences.</li>
-                  <li>2. You get a reply within 24 hours with the best-fit next step.</li>
-                  <li>3. Together you finalize the itinerary details that matter most.</li>
-                </ul>
-              </CardContent>
-            </Card>
-          </div>
-          <div className="rounded-[1.75rem] bg-[#faf7f2] p-4 text-foreground">
-            <LeadForm
-              eyebrow="Primary conversion page"
-              title="Book your concierge planning conversation"
-              description="Use the placeholder GHL form below. Real service-specific form IDs can be connected after launch."
-              sourcePage="/book"
-              minHeight={620}
-            />
+            <div className="rounded-2xl border border-white/15 bg-black/30 backdrop-blur p-6 lg:p-8">
+              <p className="text-xs uppercase tracking-widest text-[#C9A84C] mb-1">Get in touch</p>
+              <h2 className="font-display text-xl font-semibold text-white mb-4">Plan my Napa experience</h2>
+              <ConciergeForm service="general-inquiry" />
+            </div>
           </div>
         </div>
       </section>
-
-      <section className="py-10 md:py-14">
-        <Card className="border-primary/10 bg-white/85">
-          <CardContent className="grid gap-6 p-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
-            <div className="space-y-3">
-              <span className="text-sm tracking-[0.28em] text-primary uppercase">Risk Reversal</span>
-              <h2 className="font-display text-3xl font-semibold md:text-4xl">No obligation. No pressure.</h2>
-            </div>
-            <p className="text-lg leading-8 text-muted-foreground">
-              This is simply the easiest way to get expert local direction. If it’s a fit, Jeff helps
-              you move forward. If it isn’t, you still leave with clarity.
-            </p>
-          </CardContent>
-        </Card>
-      </section>
-
-      <div className="pb-10">
-        <Button asChild variant="outline">
-          <Link href="/services">Browse all concierge services</Link>
-        </Button>
-      </div>
     </main>
   );
 }

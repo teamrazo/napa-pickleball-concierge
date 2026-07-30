@@ -28,7 +28,7 @@ export function buildMetadata({
       title,
       description,
       url,
-      siteName: "Napa Pickleball Concierge",
+      siteName: "Napa Concierge",
       locale: "en_US",
       type: "website",
       images: [

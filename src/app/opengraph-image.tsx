@@ -24,7 +24,7 @@ export default function OpenGraphImage() {
         }}
       >
         <div style={{ fontSize: 26, letterSpacing: 8, textTransform: "uppercase" }}>
-          Napa Pickleball Concierge
+          Napa Concierge
         </div>
         <div style={{ display: "flex", flexDirection: "column", gap: 22, maxWidth: 860 }}>
           <div style={{ color: "#C9A84C", fontSize: 28, letterSpacing: 6, textTransform: "uppercase" }}>

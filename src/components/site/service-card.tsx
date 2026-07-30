@@ -2,9 +2,9 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import type { ServiceEntry } from "@/lib/site-data";
+import type { Service } from "@/lib/site-data";
 
-export function ServiceCard({ service }: { service: ServiceEntry }) {
+export function ServiceCard({ service }: { service: Service }) {
   return (
     <Card className="card-lift overflow-hidden border-primary/10 bg-white/85">
       <div
