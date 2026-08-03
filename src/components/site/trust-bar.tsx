@@ -11,7 +11,7 @@ export function TrustBar({ className, items = defaultItems }: TrustBarProps) {
   return (
     <div className={cn("flex flex-wrap gap-3 text-sm uppercase tracking-[0.18em]", className)}>
       {items.map((item, index) => (
-        <span key={item} className="flex items-center gap-3">
+        <span key={item} className="flex items-center gap-3 transition-all hover:scale-105">
           <span>{item}</span>
           {index < items.length - 1 ? <span className="text-accent">|</span> : null}
         </span>

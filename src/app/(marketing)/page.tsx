@@ -40,8 +40,8 @@ export default function HomePage() {
   return (
     <main id="main-content">
       <JsonLd data={jsonLd} />
-      <section className="section-shell py-8 md:py-12">
-        <div className="hero-panel soft-ring overflow-hidden rounded-[2rem] text-primary-foreground">
+      <section className="py-8 md:py-12">
+        <div className="hero-panel soft-ring overflow-hidden text-primary-foreground min-h-[92vh]">
           <div className="grid gap-10 px-6 py-10 md:px-10 md:py-14 lg:grid-cols-[1.2fr_0.8fr] lg:items-center lg:px-14">
             <div className="fade-up space-y-7">
               <span className="inline-flex rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs tracking-[0.3em] uppercase">
@@ -57,7 +57,7 @@ export default function HomePage() {
                 </p>
               </div>
               <div className="flex flex-wrap gap-4">
-                <Button asChild size="lg" variant="gold">
+                <Button asChild size="lg" variant="gold" className="btn-shimmer">
                   <Link href="/book">Book a Concierge Call</Link>
                 </Button>
                 <Button asChild size="lg" variant="soft">

@@ -32,7 +32,7 @@ export function Header() {
           </Link>
 
           {/* Desktop nav */}
-          <nav className="hidden lg:flex items-center gap-8 text-sm uppercase tracking-[0.15em]">
+          <nav className="hidden lg:flex items-center gap-8 text-sm tracking-[0.15em]">
             <Link href="/" className="text-foreground hover:text-primary transition-colors">Home</Link>
 
             {/* Services mega menu */}

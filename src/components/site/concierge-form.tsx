@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -49,9 +49,10 @@ export function ConciergeForm({ service = "general-inquiry", compact = false }: 
 
   return (
     <form onSubmit={handleSubmit} className="space-y-3">
+      <h3 className="font-display text-xl font-semibold text-white mb-4">Plan your Napa experience</h3>
       <div className="grid grid-cols-2 gap-3">
         <div>
-          <label className="sr-only">First Name</label>
+          <label className="block text-xs font-semibold uppercase tracking-widest text-white/80 mb-1">First Name</label>
           <Input
             name="firstName"
             placeholder="First Name *"
@@ -62,7 +63,7 @@ export function ConciergeForm({ service = "general-inquiry", compact = false }: 
           />
         </div>
         <div>
-          <label className="sr-only">Last Name</label>
+          <label className="block text-xs font-semibold uppercase tracking-widest text-white/80 mb-1">Last Name</label>
           <Input
             name="lastName"
             placeholder="Last Name"
@@ -72,6 +73,7 @@ export function ConciergeForm({ service = "general-inquiry", compact = false }: 
           />
         </div>
       </div>
+      <label className="block text-xs font-semibold uppercase tracking-widest text-white/80 mb-1">Email Address</label>
       <Input
         name="email"
         type="email"
@@ -81,6 +83,7 @@ export function ConciergeForm({ service = "general-inquiry", compact = false }: 
         required
         className="bg-white/10 border-white/20 text-white placeholder:text-white/50 focus:border-[#C9A84C] focus:ring-[#C9A84C]"
       />
+      <label className="block text-xs font-semibold uppercase tracking-widest text-white/80 mb-1">Phone Number (optional)</label>
       <Input
         name="phone"
         type="tel"
@@ -90,14 +93,17 @@ export function ConciergeForm({ service = "general-inquiry", compact = false }: 
         className="bg-white/10 border-white/20 text-white placeholder:text-white/50 focus:border-[#C9A84C] focus:ring-[#C9A84C]"
       />
       {!compact && (
-        <Textarea
-          name="message"
-          placeholder="How can we help plan your Napa experience?"
-          value={form.message}
-          onChange={handleChange}
-          rows={3}
-          className="bg-white/10 border-white/20 text-white placeholder:text-white/50 focus:border-[#C9A84C] focus:ring-[#C9A84C] resize-none"
-        />
+        <>
+          <label className="block text-xs font-semibold uppercase tracking-widest text-white/80 mb-1">Tell us about your trip</label>
+          <Textarea
+            name="message"
+            placeholder="How can we help plan your Napa experience?"
+            value={form.message}
+            onChange={handleChange}
+            rows={3}
+            className="bg-white/10 border-white/20 text-white placeholder:text-white/50 focus:border-[#C9A84C] focus:ring-[#C9A84C] resize-none"
+          />
+        </>
       )}
       {status === "error" && (
         <p className="text-sm text-red-300">Something went wrong. Please try again or email jeff@nvproperties.net.</p>
