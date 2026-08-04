@@ -23,7 +23,7 @@ export function Header() {
   const [servicesOpen, setServicesOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-primary/10 bg-[#faf7f2]/95 backdrop-blur">
+    <header className="border-b border-primary/10 bg-[#faf7f2]/95 backdrop-blur">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}

@@ -6,8 +6,10 @@ import { HelloBar } from "@/components/site/hello-bar";
 export default function MarketingLayout({ children }: { children: ReactNode }) {
   return (
     <>
-      <HelloBar />
-<Header />
+      <div className="sticky top-0 z-50">
+        <HelloBar />
+        <Header />
+      </div>
       {children}
       <Footer />
     </>

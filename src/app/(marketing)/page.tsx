@@ -5,6 +5,8 @@ import { JsonLd } from "@/components/site/json-ld";
 import { ConciergeForm } from "@/components/site/concierge-form";
 import { ServiceCard } from "@/components/site/service-card";
 import { TrustBar } from "@/components/site/trust-bar";
+import { MorphingBg } from "@/components/site/morphing-bg";
+import { ParallaxHero } from "@/components/site/parallax-hero";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { buildMetadata } from "@/lib/metadata";
@@ -57,31 +59,34 @@ export default function HomePage() {
 
       {/* HERO */}
       <section className="py-8 md:py-12">
-        <div className="hero-panel soft-ring overflow-hidden text-primary-foreground min-h-[92vh]">
+        <div className="hero-panel soft-ring overflow-hidden text-primary-foreground min-h-[92vh] relative">
+          <MorphingBg />
           <div className="grid gap-10 px-6 py-10 md:px-10 md:py-14 lg:grid-cols-[1.2fr_0.8fr] lg:items-center lg:px-14">
-            <div className="fade-up space-y-7">
-              <span className="inline-flex rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs tracking-[0.3em] uppercase">
-                Napa Valley Lifestyle Concierge
-              </span>
-              <div className="space-y-5">
-                <h1 className="font-display max-w-3xl text-5xl font-semibold text-balance md:text-7xl">
-                  The insider's way to do Napa without doing all the planning.
-                </h1>
-                <p className="max-w-2xl text-lg leading-8 text-primary-foreground/80 md:text-xl">
-                  Jeff curates the tables, tastings, transfers, and experiences that turn a Napa trip into something effortless.
-                </p>
+            <ParallaxHero>
+              <div className="fade-up space-y-7">
+                <span className="inline-flex rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs tracking-[0.3em] uppercase">
+                  Napa Valley Lifestyle Concierge
+                </span>
+                <div className="space-y-5">
+                  <h1 className="kinetic-text font-display max-w-3xl text-5xl font-semibold text-balance md:text-7xl">
+                    The insider&apos;s way to do Napa without doing all the planning.
+                  </h1>
+                  <p className="max-w-2xl text-lg leading-8 text-primary-foreground/80 md:text-xl">
+                    Jeff curates the tables, tastings, transfers, and experiences that turn a Napa trip into something effortless.
+                  </p>
+                </div>
+                <div className="flex flex-wrap gap-4">
+                  <Button asChild size="lg" variant="gold" className="btn-shimmer btn-bounce">
+                    <Link href="/book">Book a Concierge Call</Link>
+                  </Button>
+                  <Button asChild size="lg" variant="soft">
+                    <Link href="/services">Explore All Services</Link>
+                  </Button>
+                </div>
               </div>
-              <div className="flex flex-wrap gap-4">
-                <Button asChild size="lg" variant="gold" className="btn-shimmer">
-                  <Link href="/book">Book a Concierge Call</Link>
-                </Button>
-                <Button asChild size="lg" variant="soft">
-                  <Link href="/services">Explore All Services</Link>
-                </Button>
-              </div>
-            </div>
-            <div className="fade-up rounded-[1.75rem] bg-[#faf7f2] p-4 text-foreground">
-              <ConciergeForm service="general-inquiry" />
+            </ParallaxHero>
+            <div className="fade-up rounded-[1.75rem] bg-[#faf7f2]/95 border border-white/30 shadow-2xl shadow-black/20 p-4 text-foreground backdrop-blur-sm">
+              <ConciergeForm service="general-inquiry" dark />
             </div>
           </div>
           <TrustBar className="border-t border-white/10 px-6 py-5 text-primary-foreground md:px-14" />
@@ -89,12 +94,12 @@ export default function HomePage() {
       </section>
 
       {/* OUTCOMES STRIP */}
-      <section className="section-shell py-10 md:py-14">
+      <section className="section-shell py-10 md:py-14 scroll-morph">
         <div className="grid gap-6 sm:grid-cols-3">
           {outcomeItems.map((item) => (
             <div
               key={item.headline}
-              className="rounded-2xl border border-primary/10 bg-white/80 px-6 py-6 flex items-start gap-4"
+              className="glass-card rounded-2xl px-6 py-6 flex items-start gap-4"
             >
               <div className="rounded-xl bg-primary/10 p-3 shrink-0">
                 <item.icon className="size-5 text-primary" />
@@ -108,8 +113,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* STORY SECTION — image + outcome-led copy */}
-      <section className="section-shell py-12 md:py-20">
+      {/* STORY SECTION */}
+      <section className="section-shell py-12 md:py-20 scroll-morph">
         <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
           <div className="space-y-5">
             <span className="text-sm tracking-[0.28em] text-primary uppercase">Why it works</span>
@@ -117,7 +122,7 @@ export default function HomePage() {
               You get the Napa you imagined — not the one you had to piece together.
             </h2>
             <p className="text-lg leading-8 text-muted-foreground">
-              One local expert handles every piece: the right hotel, the table you couldn't get, the balloon at sunrise, the private wine cave. You arrive and it's already done.
+              One local expert handles every piece: the right hotel, the table you couldn&apos;t get, the balloon at sunrise, the private wine cave. You arrive and it&apos;s already done.
             </p>
             <p className="text-lg leading-8 text-muted-foreground">
               Jeff Forcier has spent years building the relationships that get guests where they want to be — from SFO to a French Laundry table to a Carneros pickleball court, all in one seamless trip.
@@ -155,8 +160,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* SERVICES GRID */}
-      <section className="section-shell py-12 md:py-20">
+      {/* SERVICES BENTO GRID */}
+      <section className="section-shell py-12 md:py-20 scroll-morph">
         <div className="mb-10 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
           <div className="max-w-2xl space-y-4">
             <span className="text-sm tracking-[0.28em] text-primary uppercase">Services</span>
@@ -164,51 +169,55 @@ export default function HomePage() {
               Eleven ways to make Napa smoother, richer, and far more memorable.
             </h2>
           </div>
-          <Button asChild variant="outline">
+          <Button asChild variant="outline" className="btn-bounce">
             <Link href="/services">See the full concierge menu</Link>
           </Button>
         </div>
-        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-          {services.map((service) => (
-            <ServiceCard key={service.slug} service={service} />
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 auto-rows-fr">
+          {services.map((service, i) => (
+            <div
+              key={service.slug}
+              className={i === 0 ? "sm:col-span-2 lg:col-span-1 lg:row-span-2" : ""}
+            >
+              <ServiceCard service={service} className="h-full" />
+            </div>
           ))}
         </div>
       </section>
 
-      {/* TESTIMONIALS */}
-      <section className="section-shell py-12 md:py-20">
-        <div className="rounded-[2rem] border border-primary/10 bg-white/85 p-8 md:p-10">
-          <div className="mb-8 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
-            <div className="max-w-2xl space-y-4">
-              <span className="text-sm tracking-[0.28em] text-primary uppercase">Guest Outcomes</span>
-              <h2 className="font-display text-4xl font-semibold text-balance md:text-5xl">
-                Real guests. Real results.
-              </h2>
-            </div>
-            <p className="max-w-md text-muted-foreground">
-              When you hand off the logistics, you get to be fully present for the experience.
-            </p>
+      {/* TESTIMONIALS — horizontal scroll */}
+      <section className="section-shell py-12 md:py-20 scroll-morph">
+        <div className="mb-8 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+          <div className="max-w-2xl space-y-4">
+            <span className="text-sm tracking-[0.28em] text-primary uppercase">Guest Outcomes</span>
+            <h2 className="font-display text-4xl font-semibold text-balance md:text-5xl">
+              Real guests. Real results.
+            </h2>
           </div>
-          <div className="grid gap-6 lg:grid-cols-3">
-            {serviceTestimonials.map((testimonial) => (
-              <Card key={testimonial.name} className="border-primary/10 bg-[#fffdf9]">
-                <CardContent className="space-y-4 p-6">
-                  <p className="text-lg leading-8 text-foreground">"{testimonial.quote}"</p>
-                  <div>
-                    <p className="font-semibold">{testimonial.name}</p>
-                    <p className="text-sm text-muted-foreground">{testimonial.context}</p>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+          <p className="max-w-md text-muted-foreground">
+            When you hand off the logistics, you get to be fully present for the experience.
+          </p>
+        </div>
+        <div className="flex gap-4 overflow-x-auto snap-x snap-mandatory pb-4 -mx-4 px-4 scrollbar-hide lg:grid lg:grid-cols-3 lg:overflow-visible lg:pb-0 lg:mx-0 lg:px-0">
+          {serviceTestimonials.map((testimonial) => (
+            <Card key={testimonial.name} className="glass-card border-0 shrink-0 w-[85vw] sm:w-[60vw] lg:w-auto snap-start">
+              <CardContent className="space-y-4 p-6">
+                <p className="text-lg leading-8 text-foreground">&ldquo;{testimonial.quote}&rdquo;</p>
+                <div>
+                  <p className="font-semibold">{testimonial.name}</p>
+                  <p className="text-sm text-muted-foreground">{testimonial.context}</p>
+                </div>
+              </CardContent>
+            </Card>
+          ))}
         </div>
       </section>
 
       {/* FINAL CTA */}
-      <section className="section-shell pb-16 pt-4 md:pb-24">
-        <div className="hero-panel overflow-hidden rounded-[2rem] px-6 py-12 text-primary-foreground md:px-10">
-          <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
+      <section className="section-shell pb-16 pt-4 md:pb-24 scroll-morph">
+        <div className="hero-panel overflow-hidden rounded-[2rem] px-6 py-12 text-primary-foreground md:px-10 relative">
+          <MorphingBg />
+          <div className="relative z-10 grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
             <div className="space-y-4">
               <h2 className="font-display text-4xl font-semibold text-balance md:text-5xl">
                 Start with the trip you want. Jeff handles the details from there.
@@ -217,7 +226,7 @@ export default function HomePage() {
                 One inquiry is enough to begin building the right Napa experience.
               </p>
             </div>
-            <Button asChild size="lg" variant="gold">
+            <Button asChild size="lg" variant="gold" className="btn-bounce">
               <Link href="/book">Start Planning Your Napa Experience</Link>
             </Button>
           </div>
