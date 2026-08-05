@@ -1,5 +1,7 @@
+import Image from "next/image";
 import { buildMetadata } from "@/lib/metadata";
 import { ConciergeForm } from "@/components/site/concierge-form";
+import { TrustBar } from "@/components/site/trust-bar";
 
 export const metadata = buildMetadata({
   title: "Book a Concierge Call",
@@ -10,16 +12,29 @@ export const metadata = buildMetadata({
 export default function BookPage() {
   return (
     <main id="main-content">
-      <section
-        className="relative min-h-[100dvh] flex items-center bg-gradient-to-br from-[#6B2737] to-[#2C2C2C]"
-        style={{
-          backgroundImage: "radial-gradient(circle at 75% 20%, rgba(201,168,76,0.2), transparent 40%), var(--tw-gradient-stops)",
-        }}
-      >
-        <div
-          className="pointer-events-none absolute inset-0 opacity-[0.04]"
-          style={{ backgroundImage: "radial-gradient(circle, #fff 1px, transparent 1px)", backgroundSize: "24px 24px" }}
-        />
+      <section className="relative min-h-[100dvh] flex items-center">
+        {/* Full-bleed vineyard background */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/images/hero-vineyard.jpg"
+            alt="Napa Valley vineyard at golden hour"
+            fill
+            priority
+            className="object-cover"
+            sizes="100vw"
+          />
+          {/* Dark overlay for legibility */}
+          <div className="absolute inset-0 bg-gradient-to-br from-black/75 via-black/55 to-black/65" />
+          {/* Gold accent radial */}
+          <div
+            className="absolute inset-0 opacity-20"
+            style={{
+              background:
+                "radial-gradient(circle at 75% 20%, rgba(201,168,76,0.5), transparent 50%)",
+            }}
+          />
+        </div>
+
         <div className="relative z-10 mx-auto max-w-5xl w-full px-4 sm:px-6 lg:px-8 py-20">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="text-white space-y-6">
@@ -51,6 +66,11 @@ export default function BookPage() {
             </div>
           </div>
         </div>
+
+        <TrustBar
+          className="absolute bottom-0 inset-x-0 border-t border-white/10 bg-black/20 px-6 py-4 text-white"
+          items={["Napa Valley Certified", "Locally Curated", "Book in 24 Hours"]}
+        />
       </section>
     </main>
   );
