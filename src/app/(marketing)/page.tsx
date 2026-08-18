@@ -125,7 +125,7 @@ export default function HomePage() {
               One local expert handles every piece: the right hotel, the table you couldn&apos;t get, the balloon at sunrise, the private wine cave. You arrive and it&apos;s already done.
             </p>
             <p className="text-lg leading-8 text-muted-foreground">
-              Jeff Forcier has spent years building the relationships that get guests where they want to be — from SFO to a French Laundry table to a Carneros pickleball court, all in one seamless trip.
+              Jeff Forcier has spent years building the relationships that get guests where they want to be — from SFO to a French Laundry table to a private pickleball court, all in one seamless trip.
             </p>
           </div>
           <div className="grid grid-cols-2 gap-3">

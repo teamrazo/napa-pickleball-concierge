@@ -9,7 +9,6 @@ const serviceIcons: Record<string, React.ElementType> = {
   "airport-pickup":      Plane,
   "hotel-reservations":  Building2,
   "restaurant-bookings": UtensilsCrossed,
-  "train-rides":         Train,
   "bicycle-rides":       Bike,
   "balloon-rides":       Wind,
   "boat-rides":          Anchor,

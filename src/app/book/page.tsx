@@ -49,7 +49,7 @@ export default function BookPage() {
                 {[
                   "Response within 24 hours",
                   "Locally curated, personally arranged",
-                  "11 services across Napa Valley",
+                  "10 curated services across Napa Valley",
                   "No booking fees",
                 ].map((item) => (
                   <li key={item} className="flex items-center gap-2">

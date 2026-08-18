@@ -12,9 +12,9 @@ const MESSAGES = [
     href: '/book',
   },
   {
-    desktop: 'Pickleball at Carneros Inn — instruction + spa + dining in one.',
+    desktop: 'Private pickleball — your own court, or a Carneros Inn resort day.',
     desktopCta: "Reserve Your Spot",
-    mobile: 'Pickleball + spa + dining',
+    mobile: 'Private court pickleball',
     icon: Activity,
     href: '/book',
   },

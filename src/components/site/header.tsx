@@ -8,14 +8,13 @@ const services = [
   { href: "/services/airport-pickup",      name: "Airport Pickup",             hook: "Arrive relaxed. We're there when you land." },
   { href: "/services/hotel-reservations",  name: "Hotel Reservations",         hook: "The right room changes everything." },
   { href: "/services/restaurant-bookings", name: "Restaurant Bookings",        hook: "Napa's best tables, reserved for you." },
-  { href: "/services/train-rides",         name: "Train Rides",                hook: "Iconic Napa Valley Rail experiences." },
   { href: "/services/bicycle-rides",       name: "Bicycle Rides",              hook: "Wine country, two wheels at a time." },
   { href: "/services/balloon-rides",       name: "Balloon Rides",              hook: "Napa from 3,000 feet. Unforgettable." },
   { href: "/services/boat-rides",          name: "Boat Rides & Wine Tasting",  hook: "Napa River + world-class wine." },
   { href: "/services/wine-tours",          name: "Wine Tours",                 hook: "Private driver or we drive yours." },
-  { href: "/services/pickleball-carneros", name: "Pickleball at Carneros Inn", hook: "Instruction, dining, spa — all in one." },
+  { href: "/services/pickleball-carneros", name: "Private Pickleball",         hook: "Private court or Carneros Inn resort day." },
   { href: "/services/hiking-trails",       name: "Hiking Trails",              hook: "Napa's best trails, curated for you." },
-  { href: "/services/wine-train",          name: "The Wine Train",             hook: "The most iconic ride in wine country." },
+  { href: "/services/wine-train",          name: "Napa Valley Wine Train",     hook: "The most iconic ride in wine country." },
 ];
 
 export function Header() {
