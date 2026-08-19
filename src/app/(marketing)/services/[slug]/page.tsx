@@ -46,7 +46,7 @@ export default async function ServicePage({ params }: PageProps) {
     provider: {
       "@type": "LocalBusiness",
       name: "Napa Concierge",
-      email: "jeff@nvproperties.net",
+      email: "info@napasonomawinecountryconcierge.com",
       url: siteUrl,
     },
   };

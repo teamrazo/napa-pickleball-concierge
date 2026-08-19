@@ -36,8 +36,8 @@ export function Footer() {
             <div className="space-y-1.5 text-sm text-white/55">
               <p>
                 Contact:{" "}
-                <a className="text-[#C9A84C] underline-offset-4 hover:underline" href="mailto:jeff@nvproperties.net">
-                  jeff@nvproperties.net
+                <a className="text-[#C9A84C] underline-offset-4 hover:underline" href="mailto:info@napasonomawinecountryconcierge.com">
+                  info@napasonomawinecountryconcierge.com
                 </a>
               </p>
               <p>Response within 24 hours</p>

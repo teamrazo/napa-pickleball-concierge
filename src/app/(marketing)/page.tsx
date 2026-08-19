@@ -81,7 +81,7 @@ export default function HomePage() {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     name: "Napa Concierge",
-    email: "jeff@nvproperties.net",
+    email: "info@napasonomawinecountryconcierge.com",
     url: siteUrl,
     description:
       "Wine country concierge planning for Napa Valley and Sonoma visitors seeking curated experiences.",

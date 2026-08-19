@@ -34,8 +34,8 @@ export default function TermsPage() {
           </p>
           <p>
             For questions about these terms or a current inquiry, contact{" "}
-            <a className="text-primary underline-offset-4 hover:underline" href="mailto:jeff@nvproperties.net">
-              jeff@nvproperties.net
+            <a className="text-primary underline-offset-4 hover:underline" href="mailto:info@napasonomawinecountryconcierge.com">
+              info@napasonomawinecountryconcierge.com
             </a>
             .
           </p>

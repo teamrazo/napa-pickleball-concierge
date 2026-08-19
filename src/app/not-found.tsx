@@ -14,7 +14,7 @@ export default function NotFound() {
         Napa still has the itinerary. This page just missed the pickup.
       </h1>
       <p className="max-w-xl text-lg leading-8 text-muted-foreground">
-        Head back to the concierge desk, browse the service menu, or book a call and let Jeff point
+        Head back to the concierge desk, browse the service menu, or book a call and let our concierge team point
         you in the right direction.
       </p>
       <div className="flex flex-wrap justify-center gap-4">

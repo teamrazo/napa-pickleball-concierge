@@ -19,7 +19,7 @@ export default function PrivacyPage() {
         </div>
         <div className="prose-copy space-y-6">
           <p>
-            Napa Concierge collects the information you submit through hosted forms so Jeff
+            Napa Concierge collects the information you submit through hosted forms so our concierge team
             can respond to your inquiry, coordinate requested services, and follow up about your Napa Valley plans.
           </p>
           <p>
@@ -34,8 +34,8 @@ export default function PrivacyPage() {
           </p>
           <p>
             To request an update or deletion of your submitted information, email{" "}
-            <a className="text-primary underline-offset-4 hover:underline" href="mailto:jeff@nvproperties.net">
-              jeff@nvproperties.net
+            <a className="text-primary underline-offset-4 hover:underline" href="mailto:info@napasonomawinecountryconcierge.com">
+              info@napasonomawinecountryconcierge.com
             </a>
             .
           </p>

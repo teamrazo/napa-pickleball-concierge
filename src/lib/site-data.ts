@@ -1,4 +1,4 @@
-export const siteUrl = "https://napa-pickleball-concierge.vercel.app";
+export const siteUrl = "https://napasonomawinecountryconcierge.com";
 export const siteName = "Napa Concierge";
 
 export interface Service {
@@ -49,7 +49,7 @@ export const services: Service[] = [
     intro: "Whether you want a trusted driver behind the wheel of your own car while you taste freely, or a fully chauffeured luxury vehicle for the day, our concierge team coordinates every detail. Our luxury car service is affiliated with Driven by Deb — discreet, reliable, and perfectly suited for wine country itineraries.",
     metaDescription: "Car services for Napa and Sonoma Wine Country — designated driver in your vehicle or luxury chauffeured car service for up to 4 guests via Driven by Deb.",
     related: ["wine-tours", "restaurant-bookings", "airport-pickup"],
-    image: "/images/airport-pickup.jpg",
+    image: "/images/car-service.jpg",
     whatYouGet: [
       "Designated driver option: your car, a professional driver, no worries",
       "Luxury car service for up to 4 guests — affiliated with Driven by Deb",
@@ -137,7 +137,7 @@ export const services: Service[] = [
     intro: "Some of the most memorable wine moments in Napa happen underground. Our concierge team has cultivated relationships with private estates that open their caves to select guests — offering an intimate, unhurried experience completely off the beaten tourist path.",
     metaDescription: "Private wine cave experiences in Napa Valley — exclusive insider access to caves, tableside barrel tastings, and winemaker conversations not available to the general public.",
     related: ["wine-tours", "restaurant-bookings", "wine-train"],
-    image: "/images/wine-tour.jpg",
+    image: "/images/wine-cave.jpg",
     whatYouGet: [
       "Exclusive access to private caves not listed on public booking platforms",
       "Tableside barrel tastings and winemaker conversations",
@@ -181,7 +181,7 @@ export const services: Service[] = [
     intro: "When you're staying in an Airbnb or VRBO in Napa or Sonoma, the details make all the difference. Our concierge team handles pre-arrival grocery shopping and pantry stocking, kitchen setup, curated wine selections, catering coordination, and delivery services — turning a rental into a seamless wine country retreat.",
     metaDescription: "Napa and Sonoma Airbnb and VRBO concierge services — pre-arrival pantry stocking, kitchen provisioning, wine delivery, catering coordination, and in-house setup.",
     related: ["restaurant-bookings", "wine-tours", "hotel-reservations"],
-    image: "/images/hotel.jpg",
+    image: "/images/airbnb-provisioning.jpg",
     whatYouGet: [
       "Pre-arrival pantry stocking and kitchen provisioning tailored to your preferences",
       "Curated wine and charcuterie delivery ready when you walk in",

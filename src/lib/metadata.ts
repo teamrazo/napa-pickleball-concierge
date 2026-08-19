@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-export const siteUrl = "https://napa-pickleball-concierge.vercel.app";
+export const siteUrl = "https://napasonomawinecountryconcierge.com";
 
 type MetadataConfig = {
   title: string;

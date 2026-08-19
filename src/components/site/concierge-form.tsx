@@ -144,7 +144,7 @@ export function ConciergeForm({ service = "general-inquiry", compact = false, da
       )}
 
       {status === "error" && (
-        <p className={errorClass}>Something went wrong. Please try again or email jeff@nvproperties.net.</p>
+        <p className={errorClass}>Something went wrong. Please try again or email info@napasonomawinecountryconcierge.com.</p>
       )}
 
       <Button
