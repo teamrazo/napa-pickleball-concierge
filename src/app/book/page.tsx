@@ -32,7 +32,7 @@ export default function BookPage() {
             sizes="100vw"
           />
           {/* Dark overlay for legibility */}
-          <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-black/60 to-black/70" />
+          <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-black/75 to-black/80" />
           {/* Gold accent radial */}
           <div
             className="absolute inset-0 opacity-25"

@@ -33,7 +33,7 @@ export function ServiceCard({ service, className }: { service: Service; classNam
           className="object-cover transition-transform duration-500 hover:scale-105"
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/55 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/78 via-black/35 to-transparent" />
         <span className="absolute bottom-3 left-3 text-xs uppercase tracking-widest text-white/90 font-medium">
           {service.eyebrow}
         </span>
