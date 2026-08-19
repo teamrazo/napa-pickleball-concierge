@@ -8,7 +8,7 @@ import { services } from "@/lib/site-data";
 export const metadata = buildMetadata({
   title: "All Services",
   description:
-    "Browse the full Napa Valley concierge menu, from airport pickup and wine tours to restaurant bookings, pickleball, and the Wine Train.",
+    "Browse the full Napa and Sonoma Wine Country concierge menu — wine cave experiences, car services, river cruises, Airbnb provisioning, pickleball, and more.",
   path: "/services",
 });
 
@@ -23,11 +23,11 @@ export default function ServicesPage() {
                 Concierge Menu
               </span>
               <h1 className="font-display max-w-3xl text-5xl font-semibold text-balance md:text-6xl">
-                Every service Jeff can line up before you ever arrive in Napa.
+                Every service our concierge team can arrange before you ever arrive in Wine Country.
               </h1>
               <p className="max-w-2xl text-lg leading-8 text-primary-foreground/80">
-                Start with the experience that matters most, or let Jeff coordinate the entire weekend
-                from airport arrival to the last reservation.
+                Start with the experience that matters most, or let our team coordinate the entire weekend
+                — from airport arrival to the last reservation across Napa and Sonoma.
               </p>
             </div>
             <div className="rounded-[1.5rem] border border-white/12 bg-white/10 p-6">

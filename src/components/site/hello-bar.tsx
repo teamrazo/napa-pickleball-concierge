@@ -1,29 +1,29 @@
 'use client';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { X, Wine, Activity, Plane } from 'lucide-react';
+import { X, Wine, Compass, Car } from 'lucide-react';
 
 const MESSAGES = [
   {
-    desktop: "Napa's insider. One call plans everything.",
+    desktop: "Napa & Sonoma Wine Country — one concierge team handles everything.",
     desktopCta: "Book a Concierge Call",
-    mobile: "One call plans your Napa trip",
+    mobile: "Wine Country concierge — one call plans it all",
+    icon: Compass,
+    href: '/book',
+  },
+  {
+    desktop: 'Private caves, iconic estates, hidden-gem family vineyards — all arranged for you.',
+    desktopCta: "Explore Wine Experiences",
+    mobile: 'Private caves & hidden-gem wineries',
     icon: Wine,
-    href: '/book',
+    href: '/services/wine-tours',
   },
   {
-    desktop: 'Private pickleball — your own court, or a Carneros Inn resort day.',
-    desktopCta: "Reserve Your Spot",
-    mobile: 'Private court pickleball',
-    icon: Activity,
-    href: '/book',
-  },
-  {
-    desktop: 'Airport pickup, hotels, restaurants — one local contact handles it all.',
-    desktopCta: "Start Planning",
-    mobile: 'One local contact, full trip',
-    icon: Plane,
-    href: '/book',
+    desktop: 'Designated driver or luxury car service — we move your group through wine country worry-free.',
+    desktopCta: "Learn About Car Services",
+    mobile: 'Designated driver & luxury car service',
+    icon: Car,
+    href: '/services/car-services',
   },
 ];
 
@@ -39,7 +39,7 @@ export function HelloBar() {
         setIndex((prev) => (prev + 1) % MESSAGES.length);
         setFading(false);
       }, 300);
-    }, 4000);
+    }, 5000);
     return () => clearInterval(interval);
   }, []);
 
@@ -50,7 +50,7 @@ export function HelloBar() {
 
   return (
     <div
-      className="w-full flex items-center justify-between gap-2 px-4 py-2 text-sm text-white"
+      className="w-full flex items-center justify-between gap-2 px-4 py-2.5 text-sm text-white"
       style={{ backgroundColor: '#6b2737' }}
     >
       <div className="flex-1 text-center">

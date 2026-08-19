@@ -1,6 +1,6 @@
 'use client';
 import { useState } from "react";
-import { CheckCircle2 } from "lucide-react";
+import { CheckCircle2, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -39,31 +39,47 @@ export function ConciergeForm({ service = "general-inquiry", compact = false, da
     }
   };
 
-  const labelClass = dark
-    ? "block text-xs font-semibold uppercase tracking-widest text-foreground/70 mb-1"
-    : "block text-xs font-semibold uppercase tracking-widest text-white/80 mb-1";
+  // Unified styling — dark vs light mode variants
+  const labelClass = "block text-xs font-semibold uppercase tracking-widest mb-1 " +
+    (dark ? "text-foreground/65" : "text-white/70");
 
-  const inputClass = dark
-    ? "bg-white/60 border-primary/20 text-foreground placeholder:text-foreground/40 focus:border-primary focus:ring-primary"
-    : "bg-white/10 border-white/20 text-white placeholder:text-white/50 focus:border-[#C9A84C] focus:ring-[#C9A84C]";
+  const inputClass = "h-10 rounded-lg border text-sm " +
+    (dark
+      ? "bg-white/70 border-primary/20 text-foreground placeholder:text-foreground/35 focus:border-primary focus:ring-1 focus:ring-primary"
+      : "bg-white/12 border-white/20 text-white placeholder:text-white/45 focus:border-[#C9A84C] focus:ring-1 focus:ring-[#C9A84C]");
 
-  const titleClass = dark ? "font-display text-xl font-semibold text-primary mb-4" : "font-display text-xl font-semibold text-white mb-4";
-  const subtextClass = dark ? "text-[11px] text-foreground/40 text-center" : "text-[11px] text-white/50 text-center";
-  const errorClass = dark ? "text-sm text-red-600" : "text-sm text-red-300";
+  const textareaClass = "rounded-lg border text-sm resize-none " +
+    (dark
+      ? "bg-white/70 border-primary/20 text-foreground placeholder:text-foreground/35 focus:border-primary focus:ring-1 focus:ring-primary"
+      : "bg-white/12 border-white/20 text-white placeholder:text-white/45 focus:border-[#C9A84C] focus:ring-1 focus:ring-[#C9A84C]");
+
+  const titleClass = "font-display text-xl font-semibold mb-4 " +
+    (dark ? "text-primary" : "text-white");
+
+  const subtextClass = "text-[11px] text-center " +
+    (dark ? "text-foreground/40" : "text-white/45");
+
+  const errorClass = "text-sm " +
+    (dark ? "text-red-600" : "text-red-300");
 
   if (status === "success") {
     return (
-      <div className={`rounded-2xl p-6 text-center space-y-2 ${dark ? "bg-primary/5 border border-primary/20" : "bg-white/10 border border-white/20"}`}>
-        <CheckCircle2 className="size-10 text-accent mx-auto" />
-        <p className={`font-display text-lg font-semibold ${dark ? "text-primary" : "text-white"}`}>You're on our list.</p>
-        <p className={`text-sm ${dark ? "text-foreground/60" : "text-white/80"}`}>We'll reach out within 24 hours to start planning your Napa experience.</p>
+      <div className={`rounded-2xl p-8 text-center space-y-3 ${dark ? "bg-primary/5 border border-primary/20" : "bg-white/10 border border-white/20"}`}>
+        <CheckCircle2 className="size-12 text-accent mx-auto" />
+        <p className={`font-display text-xl font-semibold ${dark ? "text-primary" : "text-white"}`}>
+          You&apos;re on our list.
+        </p>
+        <p className={`text-sm leading-6 ${dark ? "text-foreground/60" : "text-white/75"}`}>
+          Our concierge team will reach out within 24 hours to start planning your Wine Country experience.
+        </p>
       </div>
     );
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-3">
-      <h3 className={titleClass}>Plan your Napa experience</h3>
+    <form onSubmit={handleSubmit} className="space-y-3.5">
+      <h3 className={titleClass}>Plan your Wine Country experience</h3>
+
       <div className="grid grid-cols-2 gap-3">
         <div>
           <label className={labelClass}>First Name</label>
@@ -87,50 +103,61 @@ export function ConciergeForm({ service = "general-inquiry", compact = false, da
           />
         </div>
       </div>
-      <label className={labelClass}>Email Address</label>
-      <Input
-        name="email"
-        type="email"
-        placeholder="Email Address *"
-        value={form.email}
-        onChange={handleChange}
-        required
-        className={inputClass}
-      />
-      <label className={labelClass}>Phone Number (optional)</label>
-      <Input
-        name="phone"
-        type="tel"
-        placeholder="Phone (optional)"
-        value={form.phone}
-        onChange={handleChange}
-        className={inputClass}
-      />
+
+      <div>
+        <label className={labelClass}>Email Address</label>
+        <Input
+          name="email"
+          type="email"
+          placeholder="Email Address *"
+          value={form.email}
+          onChange={handleChange}
+          required
+          className={inputClass}
+        />
+      </div>
+
+      <div>
+        <label className={labelClass}>Phone Number (optional)</label>
+        <Input
+          name="phone"
+          type="tel"
+          placeholder="Phone (optional)"
+          value={form.phone}
+          onChange={handleChange}
+          className={inputClass}
+        />
+      </div>
+
       {!compact && (
-        <>
+        <div>
           <label className={labelClass}>Tell us about your trip</label>
           <Textarea
             name="message"
-            placeholder="How can we help plan your Napa experience?"
+            placeholder="How can we help plan your Wine Country experience?"
             value={form.message}
             onChange={handleChange}
             rows={3}
-            className={`${inputClass} resize-none`}
+            className={textareaClass}
           />
-        </>
+        </div>
       )}
+
       {status === "error" && (
         <p className={errorClass}>Something went wrong. Please try again or email jeff@nvproperties.net.</p>
       )}
+
       <Button
         type="submit"
         disabled={status === "loading"}
         variant="gold"
-        className="w-full btn-bounce"
+        className="w-full btn-bounce gap-2"
       >
-        {status === "loading" ? "Sending…" : "Plan My Napa Experience"}
+        <Send className="size-4" />
+        {status === "loading" ? "Sending…" : "Plan My Wine Country Experience"}
       </Button>
-      <p className={subtextClass}>No obligation. We respond within 24 hours.</p>
+
+      <p className={subtextClass}>No obligation. Our team responds within 24 hours.</p>
     </form>
   );
 }

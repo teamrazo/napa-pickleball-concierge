@@ -5,15 +5,15 @@ type TrustBarProps = {
   items?: string[];
 };
 
-const defaultItems = ["Napa Valley Certified", "Locally Curated", "24-Hour Response"];
+const defaultItems = ["Napa & Sonoma Wine Country", "Locally Curated", "24-Hour Response"];
 
 export function TrustBar({ className, items = defaultItems }: TrustBarProps) {
   return (
     <div className={cn("flex flex-wrap gap-3 text-sm uppercase tracking-[0.18em]", className)}>
       {items.map((item, index) => (
-        <span key={item} className="flex items-center gap-3 transition-all hover:scale-105">
+        <span key={item} className="flex items-center gap-3">
           <span>{item}</span>
-          {index < items.length - 1 ? <span className="text-accent">|</span> : null}
+          {index < items.length - 1 ? <span className="text-accent opacity-70">|</span> : null}
         </span>
       ))}
     </div>

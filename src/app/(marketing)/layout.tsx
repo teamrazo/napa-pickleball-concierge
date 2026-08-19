@@ -6,7 +6,8 @@ import { HelloBar } from "@/components/site/hello-bar";
 export default function MarketingLayout({ children }: { children: ReactNode }) {
   return (
     <>
-      <div className="sticky top-0 z-50">
+      {/* Hello bar + header stacked seamlessly as one sticky unit */}
+      <div className="sticky top-0 z-50 flex flex-col shadow-sm">
         <HelloBar />
         <Header />
       </div>

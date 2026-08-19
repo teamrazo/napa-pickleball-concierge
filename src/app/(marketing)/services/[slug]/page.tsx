@@ -6,7 +6,6 @@ import { ConciergeForm } from "@/components/site/concierge-form";
 import { ServiceCard } from "@/components/site/service-card";
 import { TrustBar } from "@/components/site/trust-bar";
 import { Badge } from "@/components/ui/badge";
-import { Card, CardContent } from "@/components/ui/card";
 import { buildMetadata } from "@/lib/metadata";
 import { getServiceBySlug, services, siteUrl } from "@/lib/site-data";
 
@@ -43,7 +42,7 @@ export default async function ServicePage({ params }: PageProps) {
     serviceType: service.name,
     name: service.name,
     description: service.metaDescription,
-    areaServed: "Napa Valley",
+    areaServed: ["Napa Valley", "Sonoma County"],
     provider: {
       "@type": "LocalBusiness",
       name: "Napa Concierge",
@@ -69,7 +68,7 @@ export default async function ServicePage({ params }: PageProps) {
             sizes="100vw"
           />
           {/* Dark overlay for text legibility */}
-          <div className="absolute inset-0 bg-gradient-to-br from-black/70 via-black/50 to-black/60" />
+          <div className="absolute inset-0 bg-gradient-to-br from-black/72 via-black/55 to-black/62" />
           {/* Gold accent radial */}
           <div
             className="absolute inset-0 opacity-20"
@@ -89,16 +88,21 @@ export default async function ServicePage({ params }: PageProps) {
               <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-semibold leading-tight">
                 {service.heroTitle}
               </h1>
-              <p className="text-lg text-white/80 leading-relaxed max-w-xl">
+              <p className="text-lg text-white/82 leading-relaxed max-w-xl">
                 {service.subheadline}
               </p>
 
-              {/* What you get — 3 outcomes */}
+              {/* Intro paragraph */}
+              <p className="text-base text-white/70 leading-relaxed max-w-xl">
+                {service.intro}
+              </p>
+
+              {/* What you get */}
               <div className="rounded-2xl border border-white/15 bg-black/30 backdrop-blur px-5 py-5 space-y-3">
                 <p className="text-xs uppercase tracking-widest text-[#C9A84C] mb-1">What you get</p>
-                <ul className="space-y-2">
+                <ul className="space-y-2.5">
                   {service.whatYouGet.map((item) => (
-                    <li key={item} className="flex items-start gap-2 text-sm text-white/85 leading-relaxed">
+                    <li key={item} className="flex items-start gap-2.5 text-sm text-white/85 leading-relaxed">
                       <CheckCircle2 className="size-4 text-[#C9A84C] shrink-0 mt-0.5" />
                       {item}
                     </li>
@@ -108,18 +112,18 @@ export default async function ServicePage({ params }: PageProps) {
 
               {/* Testimonial */}
               <blockquote className="border-l-2 border-[#C9A84C] pl-4">
-                <p className="text-sm text-white/70 italic leading-relaxed">"{service.testimonial.quote}"</p>
-                <footer className="mt-2 text-xs text-white/50">
-                  — {service.testimonial.name}, {service.testimonial.context}
+                <p className="text-sm text-white/68 italic leading-relaxed">&ldquo;{service.testimonial.quote}&rdquo;</p>
+                <footer className="mt-2 text-xs text-white/45">
+                  &mdash; {service.testimonial.name}, {service.testimonial.context}
                 </footer>
               </blockquote>
             </div>
 
-            {/* Right: form — always visible without scrolling */}
-            <div className="rounded-2xl border border-white/15 bg-black/30 backdrop-blur p-6 lg:p-8">
+            {/* Right: form */}
+            <div className="rounded-2xl border border-white/15 bg-black/32 backdrop-blur p-6 lg:p-8">
               <p className="text-xs uppercase tracking-widest text-[#C9A84C] mb-1">No-obligation inquiry</p>
               <h2 className="font-display text-xl font-semibold text-white mb-4">
-                Ask about {service.name.toLowerCase()}
+                Ask our team about {service.name.toLowerCase()}
               </h2>
               <ConciergeForm service={service.slug} />
             </div>
@@ -127,8 +131,8 @@ export default async function ServicePage({ params }: PageProps) {
         </div>
 
         <TrustBar
-          className="absolute bottom-0 inset-x-0 border-t border-white/10 bg-black/20 px-6 py-4 text-white"
-          items={["Napa Valley Certified", "Locally Curated", "Book in 24 Hours"]}
+          className="absolute bottom-0 inset-x-0 border-t border-white/10 bg-black/22 px-6 py-4 text-white"
+          items={["Napa & Sonoma Wine Country", "Locally Curated", "Book in 24 Hours"]}
         />
       </section>
 

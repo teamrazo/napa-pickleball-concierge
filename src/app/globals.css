@@ -225,7 +225,8 @@ main {
   display: inline-block;
   transition: letter-spacing 220ms ease, transform 220ms ease;
 }
-.kinetic-text:hover {
+/* kinetic-text hover disabled — interfered with mega menu navigation *
+.kinetic-text-disabled:hover {
   letter-spacing: 0.02em;
   transform: scaleY(1.02);
 }
