@@ -5,6 +5,12 @@
 #   → To remove human review requirement for a repo, go to:
 #     GitHub → Repo Settings → Secrets and Variables → Actions → Variables
 #     Add variable: REQUIRE_HUMAN_REVIEW = false
+#
+# Repo prerequisites (Settings → Actions → General):
+#   - Workflow permissions: "Read and write permissions"
+#   - "Allow GitHub Actions to create and approve pull requests": ON
+#     (without this, the Auto-approve step fails with "GitHub Actions
+#     is not permitted to approve pull requests")
 # ─────────────────────────────────────────────────────────────────
 name: LEVER Auto-Deploy
 
@@ -23,6 +29,9 @@ jobs:
     if: github.event.pull_request.user.login == 'teamrazo'
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
       - name: Auto-approve
         uses: hmarr/auto-approve-action@v4
         with:
@@ -41,6 +50,9 @@ jobs:
       vars.REQUIRE_HUMAN_REVIEW != 'true'
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
       - name: Auto-approve
         uses: hmarr/auto-approve-action@v4
         with:
